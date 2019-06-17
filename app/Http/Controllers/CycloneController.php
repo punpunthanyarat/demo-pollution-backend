@@ -22,9 +22,6 @@ class CycloneController extends Controller
       $input = Input::all();
       $data = null;
       $i = 0;
-      /// leftjoin ยึดซ้าย cyclone_type *** ข้อมูลจะได้เท่าที่ซ้ายมี
-      /// rightjoin ยึดขวา cyclone *** ข้อมูลจะได้เท่าที่ขวามี
-      /// join ยึดอันน้อย *** ข้อมูลจะได้เท่าตัวน้อยมี
       $query = cyclone_type::leftjoin('cyclone','cyclone_type.type_id','=','cyclone.type_id')
       ->select('cyclone_type.type_id', 'type', 'd_d', 'h_d', 'w_d', 'dc_d', 'lv_d', 'lb_d', 'lc_d', 'dd_d');
       // ->where('cyclone_type.type_id','=',1);
